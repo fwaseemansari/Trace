@@ -1,0 +1,19 @@
+Dark mode only, deep dark backgrounds
+Glassmorphism UI — frosted glass cards with backdrop-blur, semi-transparent backgrounds (white/5 to white/10), subtle white borders (white/10)
+Aurora/mesh gradient background — slow-moving soft color blobs (purple, blue, indigo) in the background
+Micro-interactions on all interactive elements — hover tilts on cards (react-tilt), smooth button press animations, focus ring effects
+Skeleton loading states for all async content
+Smooth page transitions
+Typography: Inter or Geist font
+
+Color Palette — theme:
+- Background: #210635 (darkest purple, primary background)
+- Surface/Cards: #420D4B (deep purple, glass card base)
+- Primary accent: #7B337E (medium purple, buttons, highlights)
+- Secondary accent: #6667AB (periwinkle blue-purple, secondary elements, links)
+- Text/Light: #F5D5E0 (soft pink-white, primary text)
+- Glass cards: background #420D4B at 20-30% opacity with backdrop-blur-xl
+- Aurora background blobs: #7B337E, #6667AB, #420D4B slowly animating
+- Borders: #6667AB at 20% opacity
+- Hover states: #7B337E at 60% opacity
+- Active/selected: #6667AB

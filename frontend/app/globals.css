@@ -1,0 +1,214 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-aurora-1: var(--aurora-1);
+  --color-aurora-2: var(--aurora-2);
+  --color-aurora-3: var(--aurora-3);
+
+  --font-sans: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+/* Zen theme — dark only */
+:root {
+  color-scheme: dark;
+
+  --background: #210635;
+  --foreground: #f5d5e0;
+
+  --card: rgba(66, 13, 75, 0.25);
+  --card-foreground: #f5d5e0;
+
+  --popover: #210635;
+  --popover-foreground: #f5d5e0;
+
+  --primary: #7b337e;
+  --primary-foreground: #f9e6ee;
+
+  --secondary: #6667ab;
+  --secondary-foreground: #f5d5e0;
+
+  --muted: #420d4b;
+  --muted-foreground: #c79bb2;
+
+  --accent: #7b337e;
+  --accent-foreground: #f5d5e0;
+
+  --destructive: #e5679a;
+  --destructive-foreground: #2b0940;
+
+  --success: #62d0a0;
+
+  --border: rgba(102, 103, 171, 0.2);
+  --input: rgba(66, 13, 75, 0.25);
+  --ring: #7b337e;
+
+  --sidebar: rgba(33, 6, 53, 0.6);
+  --sidebar-foreground: #f5d5e0;
+  --sidebar-border: rgba(102, 103, 171, 0.2);
+
+  --aurora-1: #7b337e;
+  --aurora-2: #6667ab;
+  --aurora-3: #420d4b;
+
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html, body {
+    @apply text-foreground font-sans antialiased;
+    background: #210635;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(123, 51, 126, 0.55);
+    color: #f9e6ee;
+  }
+  /* Global micro-interaction: all interactive elements get a smooth transition */
+  button, a, input, textarea, select {
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Focus ring for accessibility on all focusable elements */
+  *:focus-visible {
+    outline: 2px solid rgba(102, 103, 171, 0.5);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  /* Frosted glass surface */
+  .glass {
+    background: rgba(66, 13, 75, 0.25);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(102, 103, 171, 0.2);
+  }
+  .glass:hover {
+    background: rgba(123, 51, 126, 0.6);
+    border-color: rgba(102, 103, 171, 0.35);
+  }
+  .glass-strong {
+    background: rgba(66, 13, 75, 0.3);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(102, 103, 171, 0.25);
+  }
+
+  /* Custom slim scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102, 103, 171, 0.4) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(102, 103, 171, 0.4);
+    border-radius: 9999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Aurora blob drift animations */
+@keyframes aurora-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(8%, 12%) scale(1.15);
+  }
+  66% {
+    transform: translate(-6%, -8%) scale(0.92);
+  }
+}
+@keyframes aurora-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-10%, 8%) scale(1.1);
+  }
+  66% {
+    transform: translate(9%, -10%) scale(0.95);
+  }
+}
+@keyframes aurora-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate(6%, -12%) scale(0.9);
+  }
+}
+
+.animate-aurora-a {
+  animation: aurora-a 22s ease-in-out infinite;
+}
+.animate-aurora-b {
+  animation: aurora-b 26s ease-in-out infinite;
+}
+.animate-aurora-c {
+  animation: aurora-c 30s ease-in-out infinite;
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-caret {
+  animation: blink-caret 1s step-end infinite;
+}
