@@ -47,19 +47,19 @@ This matters because plain vector search retrieves *something* for almost any qu
 
 ```
 ┌─────────────┐      ┌──────────────┐      ┌─────────────────┐
-│   Frontend   │─────▶│   FastAPI     │─────▶│   PostgreSQL     │
-│  (Next.js)   │◀─────│   Backend     │◀─────│   (Supabase)     │
+│   Frontend  │─────▶│   FastAPI    │─────▶│   PostgreSQL   │
+│  (Next.js)  │◀─────│   Backend    │◀─────│   (Supabase)   │
 └─────────────┘      └──────┬───────┘      └─────────────────┘
-                             │
-                 ┌───────────┴────────────┐
-                 │                        │
-          ┌──────▼──────┐         ┌───────▼───────┐
-          │  ChromaDB    │         │  Groq (Llama)  │
-          │ (hybrid      │         │  - Generation   │
-          │  vector +    │         │  - CRAG grading │
-          │  BM25 store) │         │  - Query        │
-          └─────────────┘         │    rewriting    │
-                                   └────────────────┘
+                            │
+                 ┌──────────┴────────────┐
+                 │                       │
+          ┌──────▼──────┐         ┌──────▼────── ─┐
+          │  ChromaDB   │         │  Groq (Llama) │
+          │ (hybrid     │         │ - Generation  │
+          │  vector +   │         │ - CRAG grading│
+          │  BM25 store)│         │ - Query       │
+          └─────────────┘         │   rewriting   │
+                                  └───────────────┘
 ```
 
 ### Retrieval pipeline (CRAG flow)
