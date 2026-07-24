@@ -4,8 +4,6 @@ Zen is a multi-user RAG (Retrieval-Augmented Generation) document chatbot. Uploa
 
 This project was built as a portfolio piece to go beyond a basic LLM wrapper — it includes real multi-user auth, retrieval quality engineering (CRAG, hybrid search), and multi-format document handling. It's not a hardened production system (see [Known Limitations](#known-limitations)), but the architecture is built the way a real system would be structured.
 
-📄 **[Read the debugging & evaluation log](./EVALUATION.md)** — a detailed account of the bugs found and fixed while building the retrieval pipeline, verified against ground-truth answers rather than assumed.
-
 ---
 
 ## Contents
