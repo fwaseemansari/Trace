@@ -1,7 +1,5 @@
 # Zen — Chat With Your Documents, Intelligently
 
-[![CI](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
-
 Zen is a multi-user RAG (Retrieval-Augmented Generation) document chatbot. Upload documents, ask questions, and get answers grounded in your own files with page-level citations — powered by hybrid retrieval and **Corrective RAG (CRAG)** retrieval grading to reduce hallucination on bad or irrelevant context.
 
 This project was built as a portfolio piece to go beyond a basic LLM wrapper — it includes real multi-user auth, retrieval quality engineering (CRAG, hybrid search), and multi-format document handling. It's not a hardened production system (see [Known Limitations](#known-limitations)), but the architecture is built the way a real system would be structured.
