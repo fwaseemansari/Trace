@@ -1,6 +1,6 @@
-# Zen — Chat With Your Documents, Intelligently
+# TRACE — Chat With Your Documents, Intelligently
 
-Zen is a multi-user RAG (Retrieval-Augmented Generation) document chatbot. Upload documents, ask questions, and get answers grounded in your own files with page-level citations — powered by hybrid retrieval and **Corrective RAG (CRAG)** retrieval grading to reduce hallucination on bad or irrelevant context.
+Trace is a multi-user RAG (Retrieval-Augmented Generation) document chatbot. Upload documents, ask questions, and get answers grounded in your own files with page-level citations — powered by hybrid retrieval and **Corrective RAG (CRAG)** retrieval grading to reduce hallucination on bad or irrelevant context.
 
 This project was built as a portfolio piece to go beyond a basic LLM wrapper — it includes real multi-user auth, retrieval quality engineering (CRAG, hybrid search), and multi-format document handling. It's not a hardened production system (see [Known Limitations](#known-limitations)), but the architecture is built the way a real system would be structured.
 
@@ -23,7 +23,7 @@ This project was built as a portfolio piece to go beyond a basic LLM wrapper —
 
 ## Why this project is different
 
-Most portfolio RAG projects stop at "embed documents, do vector search, generate an answer." Zen goes a step further with **Corrective RAG (CRAG)**: before any answer is generated, every retrieved chunk is independently graded for relevance by a lightweight LLM. If nothing relevant is found, the system rewrites the query and retries once before honestly telling the user it couldn't find an answer — instead of confidently hallucinating on irrelevant context.
+Most portfolio RAG projects stop at "embed documents, do vector search, generate an answer." Trace goes a step further with **Corrective RAG (CRAG)**: before any answer is generated, every retrieved chunk is independently graded for relevance by a lightweight LLM. If nothing relevant is found, the system rewrites the query and retries once before honestly telling the user it couldn't find an answer — instead of confidently hallucinating on irrelevant context.
 
 This matters because plain vector search retrieves *something* for almost any query, whether or not that something is actually relevant. CRAG is the layer that catches that failure mode before it reaches the user.
 
